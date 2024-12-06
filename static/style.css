@@ -1,0 +1,579 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+/* Reset list styles and add basic styles for navigation */
+.navbar {
+    background-color: #333; /* Dark background for the navbar */
+    color: #fff;
+    border-bottom: solid 1px #444; /* Adds a border for definition */
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px; /* Max width for the navbar container */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em; /* Larger font size for the logo */
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 20px; /* Space between nav items */
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav-link:hover {
+    background-color: #444; /* Slightly lighter background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+
+.hero {
+    background-color: #ef970a; 
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+}
+
+.hero input[type="text"] {
+    padding: 10px;
+    width: 300px; 
+    margin-right: 10px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #006f00; /* Darker shade for button */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.category-section {
+    background-color: #333; /* Dark background for category section */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spacing between categories */
+    padding-bottom: 20px;
+}
+
+.category {
+    background-color: #444; /* Slightly lighter for category boxes */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Add responsive design */
+@media (max-width: 600px) {
+    .hero input[type="text"] {
+        width: auto; /* Full width on mobile */
+    }
+
+    .categories {
+        flex-direction: column;
+    }
+}
+
+/* Categories Page Styling */
+
+/* Reset some default padding and margin for ul */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for the category cards or list items */
+.category-item {
+    background-color: #fff; /* White background for the cards */
+    border: 1px solid #ddd; /* Light border for definition */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Spacing inside each category item */
+    margin-bottom: 15px; /* Space between category items */
+    transition: background-color 0.3s ease; /* Smooth background color transition for hover effect */
+}
+
+/* Style for the category name */
+.category-item h3 {
+    color: #0056b3; /* Primary color for the category name */
+    margin-bottom: 8px; /* Space below the category name */
+}
+
+/* Style for the category description */
+.category-item p {
+    color: #666; /* Dark gray color for text to improve readability */
+}
+
+/* Hover effect for category items */
+.category-item:hover {
+    background-color: #f8f8f8; /* Slightly different background on hover for feedback */
+    cursor: pointer; /* Change cursor to indicate clickable items */
+}
+
+/* Responsive Grid for categories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with min 250px column width */
+    grid-gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+}
+
+@media (max-width: 768px) {
+    /* On smaller screens, we adjust the grid to stack items */
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+body {
+    background-color: #333; /* Matches the dark theme */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.search-container h2 {
+    margin-bottom: 10px;
+}
+
+.search-container input[type="search"] {
+    padding: 10px;
+    width: 50%;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-card {
+    background-color: #444; /* Each card has a dark background */
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+.category-card a {
+    color: #fff; 
+    text-decoration: none;
+}
+
+.category-card a:hover {
+    color: #008a05; 
+}
+
+
+.category-card h4 {
+    margin-bottom: 10px;
+}
+
+.category-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-card li:not(:last-child) {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .search-container input[type="search"] {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+/* Footer styles */
+.site-footer {
+    background-color: #333; /* Dark gray background */
+    color: white;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Wrap content on smaller screens */
+    justify-content: space-between; /* Equal spacing between columns */
+}
+
+.footer-column {
+    flex: 1 1 200px; /* Each column takes up equal space, minimum 200px */
+    margin: 10px;
+}
+
+.footer-column h4 {
+    color: #ef970a; /* Bright orange for section headers */
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin: 5px 0;
+}
+
+.footer-column ul li a {
+    color: white; /* White text for links */
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+    color: #ef970a; /* Bright orange hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #bbb;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+.country-select {
+    background: #444;
+    color: white;
+    border: 1px solid #555;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+.button-class-name {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Some padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px; /* Rounded corners */
+}
+/* Ensure the text is visible against any background */
+label, textarea, input, select, button {
+    color: #333; /* Dark text for visibility */
+    background-color: #fff; /* Light background for form elements */
+}
+
+/* Styling for labels to make them bold and more visible */
+label {
+    display: block; /* Make label take the full width */
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Makes text bold */
+}
+
+/* Form container for additional styling */
+.review-form-container {
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 20px; /* Padding around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slight shadow for depth */
+    width: 50%; /* Half-width of its container */
+    margin: 20px auto; /* Centering the form */
+    border: 1px solid #ccc; /* Slight border for definition */
+}
+
+/* Enhance the visual styling of input fields and textarea */
+textarea, input, select {
+    padding: 10px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Full width of their container */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Improve button visibility and interactivity */
+button {
+    background-color: #4CAF50; /* Green background for the submit button */
+    color: white; /* White text */
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners for the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #367c39; /* Darker green on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .review-form-container {
+        width: 90%; /* More width on smaller screens */
+    }
+}
+/* Login Page Styles */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #006f00;;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #006f00;;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ef970a;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-footer a {
+    color: #006f00;
+    text-decoration: none;
+}
+/* === REGISTER PAGE STYLES === */
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #006f00;
+    outline: none;
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #006f00; /* Green button color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #004f00; /* Darker green on hover */
+}
+
+.register-footer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-footer a {
+    color: #006f00; /* Green link color */
+}
+
+.register-footer a:hover {
+    text-decoration: underline;
+    color: #004f00; /* Darker green hover */
+}
+/* Search Bar Styling */
+.search-bar-container {
+    margin-bottom: 20px; /* Add space between search bar and table */
+    text-align: center; /* Center-align the search bar */
+}
+
+.search-bar-container input[type="text"] {
+    width: 300px; /* Reduce width */
+    padding: 8px; /* Adjust padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.search-bar-container button {
+    padding: 8px 15px; /* Adjust button size */
+    background-color: #006f00; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar-container button:hover {
+    background-color: #004f00; /* Darker green on hover */
+}
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px; /* Smaller font for readability */
+}
+
+th, td {
+    padding: 8px 12px; /* Add padding for spacing */
+    border: 1px solid #ddd; /* Light border for separation */
+    text-align: left;
+    word-wrap: break-word; /* Wrap long text */
+}
+
+th {
+    background-color: #333; /* Match navbar color */
+    color: white; /* White text for header */
+    text-transform: uppercase; /* Uppercase for headers */
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background-color: #006f00; /* Light background for even rows */
+}
+
+tr:hover {
+    background-color: #ef970a; /* Light gray hover */
+}
+
+td {
+    color: #f1f1f1; /* Dark gray text */
+}
+
+/* Add scrolling for tables on small screens */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent line breaks */
+    }
+}

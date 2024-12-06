@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Admin: Manage Patients</h2>
+
+<!-- Table to Display All Patients -->
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Hypertension</th>
+            <th>Heart Disease</th>
+            <th>Marital Status</th>
+            <th>Work Type</th>
+            <th>Residence</th>
+            <th>Glucose Level</th>
+            <th>BMI</th>
+            <th>Smoking Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+        <tr>
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.gender }}</td>
+            <td>{{ patient.age }}</td>
+            <td>{{ patient.hypertension }}</td>
+            <td>{{ patient.heart_disease }}</td>
+            <td>{{ patient.ever_married }}</td>
+            <td>{{ patient.work_type }}</td>
+            <td>{{ patient.Residence_type }}</td>
+            <td>{{ patient.avg_glucose_level }}</td>
+            <td>{{ patient.bmi }}</td>
+            <td>{{ patient.smoking_status }}</td>
+            <td>
+                <!-- Edit Button -->
+                <button 
+                   type="button" 
+                   class="edit-button" 
+                   data-patient='{{ patient|tojson|safe }}'>
+                   Edit
+               </button>
+
+
+                <!-- Delete Button -->
+                <form method="POST" action="{{ url_for('admin_patients') }}" style="display:inline;">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden" name="id" value="{{ patient.id }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Add/Edit Form -->
+<h3>Add/Edit Patient</h3>
+<form method="POST" action="{{ url_for('admin_patients') }}">
+    <input type="hidden" name="action" value="add" id="action">
+    <div>
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required>
+    </div>
+    <div>
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required>
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+    </div>
+    <!-- Repeat similar input fields for other attributes -->
+    <div>
+        <label for="smoking_status">Smoking Status:</label>
+        <input type="text" id="smoking_status" name="smoking_status" required>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

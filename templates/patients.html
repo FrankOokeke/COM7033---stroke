@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Patient Records</h2>
+
+<!-- Search Form -->
+<form method="POST" action="{{ url_for('patients') }}">
+    <input type="text" name="search" placeholder="Enter ID to search..." value="{{ search_query }}">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Display Results -->
+{% if data and data|length > 0 %}
+<table border="1">
+    <thead>
+        <tr>
+            {% for key in data[0].keys() %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            {% for value in row.values() %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No records found for the given ID.</p>
+{% endif %}
+{% endblock %}

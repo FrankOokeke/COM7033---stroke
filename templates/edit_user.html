@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Edit User</h2>
+<form method="GET" action="{{ url_for('edit_user') }}">
+    <input type="hidden" name="username" value="{{ user[2] }}"> <!-- Username -->
+    <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ user[0] }}" required>
+    </div>
+    <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ user[1] }}" required>
+    </div>
+    <div>
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="user" {% if user[4] == "user" %}selected{% endif %}>User</option>
+            <option value="admin" {% if user[4] == "admin" %}selected{% endif %}>Admin</option>
+        </select>
+    </div>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
